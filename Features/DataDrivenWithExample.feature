@@ -14,7 +14,7 @@ Scenario Outline: data Driven With Examples
 
   Examples:
   | username  | email               | password     |
-  | Seyitunde | Seyi22@gmail.com    | PasswordSure |
-  | Messy     | Crazy22@gmail.com   | temi443      |
+  | Yunde     | Seyi22@gmail.com    | PasswordSure |
+  |Messy     | Crazy22@gmail.com   | temi443      |
   | Roland    | Roland444@gmail.com | Passward333  |
 	
