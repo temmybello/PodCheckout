@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using PodCheckout.PageObject;
 using System;
 using System.Threading;
@@ -10,6 +11,9 @@ namespace PodCheckout.StepDefinition
     public class DataDrivenWithParameterSteps
     {
         DataDrivenWithParameterPage datadrivenwithparameterpage;
+
+        public object GenericHelper { get; private set; }
+
         public DataDrivenWithParameterSteps()
         {
             datadrivenwithparameterpage = new DataDrivenWithParameterPage();
@@ -50,12 +54,21 @@ namespace PodCheckout.StepDefinition
             datadrivenwithparameterpage.IClickSignUpButton();
         }
 
+        //[Then(@"I should be able to register successfully on the page")]
+       //public void ThenIShouldBeAbleToRegisterSuccessfullyOnThePage()
+            //Thread.Sleep(5000);
+            //Assert.That(datadrivenwithparameterpage.IsNewArticleDisplayed);
+            //Assert.IsTrue(GenericHelper.ToSt(By.Id("")));
+            //Assert.IsTrue(GenericHelper.(By.Id("new_article")));
+           
         [Then(@"I should be able to register successfully")]
         public void ThenIShouldBeAbleToRegisterSuccessfully()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             Assert.That(datadrivenwithparameterpage.IsNewArticleDisplayed);
-        }
+            //Assert.IsTrue(GenericHelper.Equals(By.Id("")));
+       }
+
 
 
 
@@ -83,11 +96,11 @@ namespace PodCheckout.StepDefinition
             datadrivenwithparameterpage.UserEnterPassword(PasswordText);
         }
 
-        [Given(@"User Click Sign in")]
-        public void GivenUserClickSignIn()
-        {
-            datadrivenwithparameterpage.UserClickSignIn();
-        }
+        //[Given(@"User Click Sign in")]
+        //public void GivenUserClickSignIn()
+        //{
+            //datadrivenwithparameterpage.UserClickSignIn();
+        //}
         
         [Given(@"User Click New article")]
         public void GivenUserClickNewArticle()
@@ -126,6 +139,7 @@ namespace PodCheckout.StepDefinition
         {
             datadrivenwithparameterpage.IClickPublish();
         }
+
 
         
     }

@@ -12,11 +12,12 @@ namespace PodCheckout.Utilities
     public class Hooks1
     {
         public static IWebDriver driver;
-        
+
 
         [BeforeScenario]
         public void BeforeScenario()
         {
+
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
         }
@@ -27,4 +28,5 @@ namespace PodCheckout.Utilities
             driver.Quit();
         }
     }
-}
+   }
+

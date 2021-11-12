@@ -1,4 +1,6 @@
-﻿using PodCheckout.PageObject;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using PodCheckout.PageObject;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;

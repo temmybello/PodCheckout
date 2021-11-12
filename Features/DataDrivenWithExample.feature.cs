@@ -76,7 +76,7 @@ namespace PodCheckout.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("data Driven With Examples")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Seyitunde", "Seyi22@gmail.com", "PasswordSure", null)]
+        [NUnit.Framework.TestCaseAttribute("Yunde", "Seyi22@gmail.com", "PasswordSure", null)]
         [NUnit.Framework.TestCaseAttribute("Messy", "Crazy22@gmail.com", "temi443", null)]
         [NUnit.Framework.TestCaseAttribute("Roland", "Roland444@gmail.com", "Passward333", null)]
         public virtual void DataDrivenWithExamples(string username, string email, string password, string[] exampleTags)

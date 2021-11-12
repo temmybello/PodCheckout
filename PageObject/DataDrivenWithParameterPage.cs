@@ -1,9 +1,11 @@
 ﻿
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using PodCheckout.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace PodCheckout.PageObject
 {
@@ -14,6 +16,16 @@ namespace PodCheckout.PageObject
             driver = Hooks1.driver;
         }
         IWebDriver driver;
+
+        //Implicit Wait
+        //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+
+        //Fluent Wait
+        //DefaultWait<IWebDriver> defaultWait = new DefaultWait<IWebDriver>(driver);
+        //fluentWait.Timeout = TimeSpan.FromSeconds(5);
+        //fluentWait.PollingInterval = TimeSpan.FromMilliseconds(250);
+
 
         IWebElement SignUp => driver.FindElement(By.XPath("/html/body/div/app-header/nav/div/ul[1]/li[3]/a"));
         IWebElement Username => driver.FindElement(By.XPath("/html/body/div/div/div/div/div/div/form/fieldset/fieldset[1]/input"));
@@ -62,8 +74,11 @@ namespace PodCheckout.PageObject
         {
             driver.Navigate().GoToUrl(url);
         }
+       
+
         public bool IsNewArticleDisplayed()
        {
+            Thread.Sleep(5000);
             return NewArticle.Displayed;
         }
         public void IClickNewArticle()

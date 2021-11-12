@@ -120,9 +120,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.When("I click on the sign up button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
- testRunner.Then("I should be able to register successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             }
             this.ScenarioCleanup();
         }

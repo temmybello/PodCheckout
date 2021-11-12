@@ -16,6 +16,9 @@ namespace PodCheckout.PageObject
         }
         IWebDriver driver;
 
+        //Implicit Wait
+        //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
         IWebElement SelectMake => driver.FindElement(By.XPath("//*[@id='vehicleBrand']"));
         IWebElement SelectMode => driver.FindElement(By.XPath("//*[@id='vehicleId']"));
         IWebElement ClickNew => driver.FindElement(By.XPath("//*[@id='carMakeAndModel']/div/div/div[1]/div[3]/label[2]/span"));
