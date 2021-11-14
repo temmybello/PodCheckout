@@ -68,6 +68,7 @@ namespace PodCheckout.PageObject
         }
         public void IClickSignUpButton()
         {
+            Thread.Sleep(3000);
             SignUpButton.Click();
         }
         public void NavigateToWebsite(String url)

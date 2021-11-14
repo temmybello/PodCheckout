@@ -5,10 +5,11 @@
 Scenario: Data Driven With parameter
 	Given I Navigate to "https://angularjs.realworld.io/#/"
 	And  I click on Signup
-	And I enter username text "oltobk"
-	And I enter my email address "toyunh@gmail.com"
-	And I enter password "mombsame22"
-	When I click on the sign up button 
+	And I enter username text "James"
+	And I enter my email address "jamer@gmail.com"
+	And I enter password "dontdoubtme22"
+	And  I click on the sign up button 
+	#And User Confirm new article 
 	#Then I should be able to register successfully
 	#Then I should be able to register successfully on the page 
 	

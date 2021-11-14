@@ -12,7 +12,7 @@ namespace PodCheckout.StepDefinition
     {
         DataDrivenWithParameterPage datadrivenwithparameterpage;
 
-        public object GenericHelper { get; private set; }
+        //public object GenericHelper { get; private set; }
 
         public DataDrivenWithParameterSteps()
         {
@@ -48,19 +48,29 @@ namespace PodCheckout.StepDefinition
         {
             datadrivenwithparameterpage.IEnterPassword(PasswordText);
         }
-        [When(@"I click on the sign up button")]
-        public void WhenIClickOnTheSignUpButton()
+        [Given(@"I click on the sign up button")]
+        public void GivenIClickOnTheSignUpButton()
         {
             datadrivenwithparameterpage.IClickSignUpButton();
         }
 
+        [Given(@"User Confirm new article")]
+        public void GivenUserConfirmNewArticle()
+        {
+            Thread.Sleep(5000);
+            Assert.That(datadrivenwithparameterpage.IsNewArticleDisplayed);
+        }
+
+
+
+
         //[Then(@"I should be able to register successfully on the page")]
-       //public void ThenIShouldBeAbleToRegisterSuccessfullyOnThePage()
-            //Thread.Sleep(5000);
-            //Assert.That(datadrivenwithparameterpage.IsNewArticleDisplayed);
-            //Assert.IsTrue(GenericHelper.ToSt(By.Id("")));
-            //Assert.IsTrue(GenericHelper.(By.Id("new_article")));
-           
+        //public void ThenIShouldBeAbleToRegisterSuccessfullyOnThePage()
+        //Thread.Sleep(5000);
+        //Assert.That(datadrivenwithparameterpage.IsNewArticleDisplayed);
+        //Assert.IsTrue(GenericHelper.ToSt(By.Id("")));
+        //Assert.IsTrue(GenericHelper.(By.Id("new_article")));
+
         [Then(@"I should be able to register successfully")]
         public void ThenIShouldBeAbleToRegisterSuccessfully()
         {
