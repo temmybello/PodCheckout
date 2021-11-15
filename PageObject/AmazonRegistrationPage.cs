@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using PodCheckout.Utilities;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,14 @@ namespace PodCheckout.PageObject
         IWebElement SignInPassword => driver.FindElement(By.XPath("//*[@id='ap_password']"));
         IWebElement UserSignIn => driver.FindElement(By.XPath("//*[@id='signInSubmit']"));
         IWebElement SignedIn => driver.FindElement(By.XPath("//*[@id='authportal-main-section']/div[2]/div/div/div/form/div/div[2]/div/div/label/div/label"));
-        IWebElement BestSellers => driver.FindElement(By.XPath("//*[@id='hmenu-content']/ul[1]/li[2]/a"));
+        IWebElement BestSellers => driver.FindElement(By.XPath("//*[@id='hmenu-content']/ul[1]/li[2]"));
+        IWebElement DiddlySquat => driver.FindElement(By.XPath("//*[@id='anonCarousel1']/ol/li[3]/div[2]/div/a[1]/div/img"));
+        IWebElement AddToBasket => driver.FindElement(By.XPath("//*[@id='add-to-cart-button']"));
+        IWebElement ProccedToCheckout => driver.FindElement(By.XPath("//*[@id='hlb-ptc-btn-native']"));
+        IWebElement BuyNow => driver.FindElement(By.XPath("//*[@id='placeYourOrder']/span/input"));
+        
+        
+        
         public void IClickAccountDropDown()
         {
             AccountDropDown.Click();
@@ -108,12 +116,31 @@ namespace PodCheckout.PageObject
         }
         public void IClickBestSellers()
         {
+            Thread.Sleep(3000);
             BestSellers.Click();
+        }
+       
+        public void IClickDiddlySquat()
+        {
+            DiddlySquat.Click();
+        }
+        public void IClickAddToBasket()
+        {
+            AddToBasket.Click();
+        }
+        public void IClickProccedToCheckout()
+        {
+            ProccedToCheckout.Click();
+        }
+        public void IclickBuyNow()
+        {
+            BuyNow.Click();
         }
         public void INavigateToTheWebsite(String url)
         {
             driver.Navigate().GoToUrl(url);
         }
+        
 
     }
 }

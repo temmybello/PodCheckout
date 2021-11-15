@@ -138,6 +138,36 @@ namespace PodCheckout.StepDefinition
         {
             amazonregistrationpage.IClickBestSellers();
         }
+        [Given(@"I click books")]
+        
+        [Given(@"I click Diddly Squat")]
+        public void GivenIClickDiddlySquat()
+        {
+            amazonregistrationpage.IClickDiddlySquat();
+        }
+
+        [Given(@"I Click Add to basket")]
+        public void GivenIClickAddToBasket()
+        {
+            amazonregistrationpage.IClickAddToBasket();
+        }
+
+        [When(@"i click procced to checkout")]
+        public void WhenIClickProccedToCheckout()
+        {
+            amazonregistrationpage.IClickProccedToCheckout();
+        }
+
+        [Then(@"I click buy now")]
+        public void ThenIClickBuyNow()
+        {
+            amazonregistrationpage.IclickBuyNow();
+        }
+
+
+
+
+
 
     }
 }
