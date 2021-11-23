@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using PodCheckout.PageObject;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace PodCheckout.StepDefinition
@@ -59,11 +60,7 @@ namespace PodCheckout.StepDefinition
             abelShoppingLoginPage.IClickFruitAndVegDropDown();
         }
         
-        [Given(@"I click fruit")]
-        public void GivenIClickFruit()
-        {
-            abelShoppingLoginPage.IClickFruit();
-        }
+
 
         [Given(@"I confirm search is on the page")]
         public void GivenIConfirmSearchIsOnThePage()
@@ -83,10 +80,10 @@ namespace PodCheckout.StepDefinition
             abelShoppingLoginPage.IClickTropicalFruit();
         }
 
-        [Given(@"I click Add textbox quality")]
-        public void GivenIClickAddTextboxQuality()
+        [Given(@"I click Add textbox quatity")]
+        public void GivenIClickAddTextboxQuatity()
         {
-            abelShoppingLoginPage.IClickTextBoxQuality();
+            abelShoppingLoginPage.IClickTextBoxQuatity();
         }
 
         [Given(@"Click Add sign plus ""(.*)""")]
@@ -94,6 +91,21 @@ namespace PodCheckout.StepDefinition
         {
             abelShoppingLoginPage.IClickAddSignPlus();
         }
+        [Given(@"I click Add textbox quality ""(.*)""")]
+        public void GivenIClickAddTextboxQuality(int p0)
+        {
+            abelShoppingLoginPage.IClickTextBoxQuatity();
+        }
+
+        [Given(@"I click Basket Icon")]
+        public void GivenIClickBasketIcon()
+        {
+            abelShoppingLoginPage.IClickBasketIcon();
+        }
+
+
+
+
 
         [Given(@"I click Add")]
         public void GivenIClickAdd()
@@ -105,8 +117,22 @@ namespace PodCheckout.StepDefinition
         [Given(@"I confirm item is added successfully in the basket")]
         public void GivenIConfirmItemIsAddedSuccessfullyInTheBasket()
         {
-            Assert.That(abelShoppingLoginPage.IConfirmBasketIsDisplayed);
+            Assert.That(abelShoppingLoginPage.IConfirmProductBasketIsDisplayed);
         }
+        [Given(@"I click on Basket botton")]
+        public void GivenIClickOnBasketBotton()
+        {
+            abelShoppingLoginPage.IclickBasketButton();
+        }
+
+
+
+
+        //[Given(@"I click on Basket Count")]
+        //public void GivenIClickOnBasketCount()
+        //{
+        //abelShoppingLoginPage.IClickOnBasketCount();
+        //}
 
         [Given(@"I confirm product basket displayed")]
         public void GivenIConfirmProductBasketDisplayed()
@@ -114,17 +140,27 @@ namespace PodCheckout.StepDefinition
             Assert.That(abelShoppingLoginPage.IsProductBasketDisplayed);
         }
 
-        [Given(@"I click carat drop down")]
-        public void GivenIClickCaratDropDown()
+        [Given(@"I click carat")]
+        public void GivenIClickCarat()
         {
-            abelShoppingLoginPage.IclickCaratDropDown();
+            Thread.Sleep(5000);
+            abelShoppingLoginPage.IclickCarat();
         }
 
-        [Given(@"I click ""(.*)""")]
-        public void GivenIClick(int p0)
+        [Given(@"I click carat number")]
+        public void GivenIClickCaratNumber()
         {
-            abelShoppingLoginPage.IClickCarat3();
+            abelShoppingLoginPage.IClickCaratNumber();
         }
+
+        [Given(@"I click drop down")]
+        public void GivenIClickDropDown()
+        {
+            abelShoppingLoginPage.IClickDropDown();
+        }
+
+
+
 
         [Given(@"the user click continue")]
         public void GivenTheUserClickContinue()

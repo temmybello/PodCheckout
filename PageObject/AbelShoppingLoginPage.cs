@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using PodCheckout.Utilities;
 using System;
 using System.Collections.Generic;
@@ -21,33 +22,65 @@ namespace PodCheckout.PageObject
             IWebElement Email => driver.FindElement(By.XPath("//*[@id='UserName']"));
             IWebElement Password => driver.FindElement(By.XPath("//*[@id='Password']"));
             IWebElement FruitAndVegDropDown => driver.FindElement(By.XPath("//*[@id='menu-parent']/ul/li[1]"));
-            IWebElement Fruit => driver.FindElement(By.XPath("//*[@id='menu-parent']/ul/li[1]/ul/ul/li[3]/span"));
             IWebElement Search => driver.FindElement(By.XPath("//*[@id='search-term']"));
             IWebElement FruitVegBoxes => driver.FindElement(By.XPath("//*[@class='push-banner']"));
             IWebElement TropicalFruit => driver.FindElement(By.XPath("//*[@id='product-list']/li[1]/div[3]/div[1]/a"));
-            IWebElement TextBoxQuality => driver.FindElement(By.XPath("//*[@id='main-inner']/div[3]/div[1]/form/div/div[3]/div[2]"));
+            IWebElement  BasketIcon => driver.FindElement(By.XPath("//*[@class='icon-basket basket-quantity']"));
+            IWebElement TextBoxQuatity => driver.FindElement(By.XPath("//*[@id='main-inner']/div[3]/div[1]/form/div/div[3]/div[2]"));
             IWebElement AddSignPlus => driver.FindElement(By.XPath("//*[@class='add-sign plus']"));
             IWebElement Add => driver.FindElement(By.XPath("//*[@class='add cta-button']"));
-            IWebElement Basket => driver.FindElement(By.XPath("//*[@id='BasketCount']"));
+            IWebElement BasketSuccessfully => driver.FindElement(By.XPath("//*[@class='in-basket basket-quantity']"));
             IWebElement ProductBasket => driver.FindElement(By.XPath("//*[@class='basket-product-container']"));
-            IWebElement CaratDropDown => driver.FindElement(By.XPath("/html/body/div[3]/div/div[2]/div[2]/div[5]/div[2]/div[2]/div[4]/div/div[2]/div[2]/span[3]"));
-            IWebElement Carat3 => driver.FindElement(By.XPath("/html/body/div[3]/div/div[2]/div[2]/div[5]/div[2]/div[2]/div[4]/div/div[2]/div[2]/div/ul/li[3]"));
+            IWebElement Carat => driver.FindElement(By.XPath("(//*[@class='carat'])[3]"));
+            IWebElement CaratNumber => driver.FindElement(By.XPath("/html/body/div[3]/div/div[2]/div[2]/div[5]/div[3]/div[2]/div[4]/div/div[2]/div[2]/div/ul/li[4]"));
             IWebElement Continue => driver.FindElement(By.XPath("//*[@class='cta-checkout-button']"));
+            IWebElement BasketButton => driver.FindElement(By.XPath("//*[@id='basket-icon']/div"));
+        IWebElement DropDown => driver.FindElement(By.XPath("(//*[@class='dropdown'])[2]"));
         
-       public void IclickCaratDropDown()
+        
+        
+        public IWebElement SelectNumber { get; private set; }
+
+        public void IClickDropDown()
+        {
+            DropDown.Click();
+        }
+
+        public void IClickCaratNumber()
+        {
+            CaratNumber.SendKeys("5");
+        }
+        public void IclickBasketButton()
+        {
+            BasketButton.Click();
+        }
+
+        public void IClickBasketIcon()
+        {
+            BasketIcon.Click();
+        }
+
+        public bool IConfirmBasketAddedSuccessfully()
         {
             Thread.Sleep(3000);
-            CaratDropDown.Click();
+            return BasketSuccessfully.Displayed;
+        }
+       public void IclickCarat()
+        {
+            Thread.Sleep(3000);
+            Carat.Click();
         }
         public bool IsProductBasketDisplayed()
         {
             Thread.Sleep(3000);
             return ProductBasket.Displayed;
         }
-        public void IClickCarat3()
+       
+        public void ISelectCaratNumber()
         {
-            Thread.Sleep(5000);
-            Carat3.Click();
+            Thread.Sleep(3000);
+            SelectElement select = new SelectElement(SelectNumber);
+            select.SelectByValue("3");
         }
         public void IClickContinue()
         {
@@ -62,13 +95,13 @@ namespace PodCheckout.PageObject
             Add.Click();
         }
 
-        public bool IConfirmBasketIsDisplayed()
+        public bool IConfirmProductBasketIsDisplayed()
         {
-            return Basket.Displayed;
+            return ProductBasket.Displayed;
         }
-        public void IClickTextBoxQuality()
+        public void IClickTextBoxQuatity()
         {
-            TextBoxQuality.Click();
+            TextBoxQuatity.Click();
         }
         public void IClickTropicalFruit()
         {
@@ -101,10 +134,7 @@ namespace PodCheckout.PageObject
             FruitAndVegDropDown.Click();
         }
 
-        public void IClickFruit()
-        {
-            Fruit.Click();
-        }
+    
         public void UserClickLogInButton()
         {
             LogInButton.Click();
