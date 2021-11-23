@@ -16,6 +16,7 @@ namespace PodCheckout.PageObject
             driver = Hooks1.driver;
         }
         IWebDriver driver;
+        
         IWebElement AcceptCookies => driver.FindElement(By.XPath("//*[@id='ccc-notify-accept']"));
         IWebElement SignUp => driver.FindElement(By.XPath("//*[@id='my-account']/div[3]/a"));
         IWebElement Postcode => driver.FindElement(By.XPath("//*[@id='postcode-checker-input']"));
@@ -27,15 +28,13 @@ namespace PodCheckout.PageObject
         IWebElement NextStep => driver.FindElement(By.XPath("//*[@id='household-dietary-requirements']/div/button"));
         IWebElement Password => driver.FindElement(By.XPath("//*[@id='Password']"));
         IWebElement YesIn => driver.FindElement(By.XPath("/html/body/div[7]/div/div/div/section/section[2]/fragment[1]/form/fragment[1]/fragment/fragment[1]/label/span"));
-        IWebElement SignUpAndContinue => driver.FindElement(By.CssSelector(" body > div:nth-child(41) > div > div > div > section > section.signup-screen.create-account > div > button"));
+        IWebElement SignUpAndContinue => driver.FindElement(By.XPath("//*[@class='signup-screen__button-wrapper create-account']"));
         IWebElement Email => driver.FindElement(By.XPath("//*[@id='Email']"));
         IWebElement HearAboutUs => driver.FindElement(By.XPath("/html/body/div[7]/div/div/div/section/section[2]/fragment[1]/form/div/label/select"));
-        IWebElement FruitAndVegDropDown => driver.FindElement(By.XPath("//*[@id='menu-parent']/ul/li[1]"));
-        IWebElement Fruit => driver.FindElement(By.XPath("//*[@id='menu-parent']/ul/li[1]/ul/ul/li[3]/span"));
         IWebElement AllYouNeedIsLess => driver.FindElement(By.XPath("//*[@id='prospect-home-page']/section/section[2]/div[2]/h1"));
         IWebElement StartShopping => driver.FindElement(By.XPath("//*[@class='push-banner']"));
-        IWebElement CompleteSignUp => driver.FindElement(By.XPath("/html/body/div[7]/div/div/div/section/section[2]/div/button"));
-        IWebElement Search => driver.FindElement(By.XPath("//*[@id='search-term']"));
+       
+       
 
 
         public object PickAddress { get; private set; }
@@ -113,9 +112,12 @@ namespace PodCheckout.PageObject
 
         public void IClickSignUpAndContinue()
         {
+            Thread.Sleep(5000);
+            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            //js.ExecuteScript("window.scrollBy(0,350)", "");
             SignUpAndContinue.Click();
         }
-
+       
         public void IClickStartShopping()
         { 
             StartShopping.Click();
@@ -133,16 +135,6 @@ namespace PodCheckout.PageObject
             driver.Navigate().GoToUrl(url);
         }
 
-        public void IClickFruitAndVegDropDown()
-        {
-          FruitAndVegDropDown.Click();
-        }
-
-        public void IClickFruit()
-        {
-            Fruit.Click();
-        }
-
         public bool IConfirmAllYouNeedIsLessDisplayed()
         {
             return AllYouNeedIsLess.Displayed;
@@ -156,14 +148,10 @@ namespace PodCheckout.PageObject
             return StartShopping.Displayed;
         }
 
-        public void IClickCompleteSignUp()
-        {
-            CompleteSignUp.Click();
-        }
-         public bool IConfirmSearchIsDisplayed()
-        {
-            return Search.Displayed;
-        }
+        
+        
+
+        
 
 
 

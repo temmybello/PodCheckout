@@ -119,33 +119,10 @@ namespace PodCheckout.StepDefinition
         {
             abelShoppingPage.IClickStartShopping();
         }
-        [When(@"I click fruit&Veg")]
-        public void WhenIClickFruitVeg()
-        {
-            abelShoppingPage.IClickFruitAndVegDropDown();
-        }
-        [Given(@"I click complete sign up")]
-        public void GivenIClickCompleteSignUp()
-        {
-            abelShoppingPage.IClickCompleteSignUp();
-        }
-        [Given(@"I confirm search is on the page")]
-        public void GivenIConfirmSearchIsOnThePage()
-        {
-            Assert.That(abelShoppingPage.IConfirmSearchIsDisplayed);
-        }
+       
+        
 
-
-
-
-
-        [When(@"I click  fruit")]
-        public void WhenIClickFruit()
-        {
-            abelShoppingPage.IClickFruit();
-        }
-
-
+       
 
 
 
