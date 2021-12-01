@@ -36,6 +36,12 @@ namespace PodCheckout.PageObject
         IWebElement Email3 => driver.FindElement(By.CssSelector("#marketingConsent"));
         IWebElement Submit1 => driver.FindElement(By.CssSelector("#customerDetail > div > div.max-width-text.m-centre > div > div:nth-child(6) > div > button"));
 
+
+
+
+
+
+
         public void ISelectMake()
         {
             SelectElement Select = new SelectElement(SelectMake);

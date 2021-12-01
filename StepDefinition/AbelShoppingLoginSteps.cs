@@ -100,9 +100,15 @@ namespace PodCheckout.StepDefinition
         [Given(@"I click Basket Icon")]
         public void GivenIClickBasketIcon()
         {
+            Thread.Sleep(5000);
             abelShoppingLoginPage.IClickBasketIcon();
         }
 
+        [Given(@"I click closing")]
+        public void GivenIClickClosing()
+        {
+            abelShoppingLoginPage.IClickClosing();
+        }
 
 
 
@@ -140,25 +146,98 @@ namespace PodCheckout.StepDefinition
             Assert.That(abelShoppingLoginPage.IsProductBasketDisplayed);
         }
 
-        [Given(@"I click carat")]
-        public void GivenIClickCarat()
+        [Given(@"I click pick number")]
+        public void GivenIClickPickNumber()
+        {
+            abelShoppingLoginPage.IClickPickNumber();
+        }
+        
+        [Given(@"I confirm Onboarding checkout is displayed")]
+        public void GivenIConfirmOnboardingCheckoutIsDisplayed()
         {
             Thread.Sleep(5000);
-            abelShoppingLoginPage.IclickCarat();
+            Assert.That(abelShoppingLoginPage.IConfirmedOnBoardingCheckoutIsDisplayed);
         }
+        [Given(@"I confirm item added to basket count successfully")]
+        public void GivenIConfirmItemAddedToBasketCountSuccessfully()
+        {
+            Thread.Sleep(3000);
+            Assert.That(abelShoppingLoginPage.IConfirmItemAddedToBasketCountSuccessfully);
+        }
+
 
         [Given(@"I click carat number")]
         public void GivenIClickCaratNumber()
         {
+            Thread.Sleep(5000);
             abelShoppingLoginPage.IClickCaratNumber();
         }
 
         [Given(@"I click drop down")]
         public void GivenIClickDropDown()
         {
+            Thread.Sleep(3000);
             abelShoppingLoginPage.IClickDropDown();
         }
 
+        [Given(@"I select Title drop down")]
+        public void GivenISelectTitleDropDown()
+        {
+            Thread.Sleep(5000);
+            abelShoppingLoginPage.ISelectTitleDropDown();
+        }
+
+        [Given(@"I enter first name ""(.*)""")]
+        public void GivenIEnterFirstName(string NameText)
+        {
+            abelShoppingLoginPage.IEnterFirstName(NameText);
+        }
+        [Given(@"I click Title")]
+        public void GivenIClickTitle()
+        {
+            abelShoppingLoginPage.IClickTitle();
+        }
+
+
+        [Given(@"I enter last name ""(.*)""")]
+        public void GivenIEnterLastName(string NameText)
+        {
+            abelShoppingLoginPage.IEnterLastName(NameText);
+        }
+
+      
+
+        [Given(@"I Where shall we leave your order if you're not in ""(.*)""")]
+        public void GivenIWhereShallWeLeaveYourOrderIfYouReNotIn(string Text)
+        {
+            abelShoppingLoginPage.IEnterDeliveryNote(Text);
+        }
+
+        [Given(@"User click continue botton")]
+        public void GivenUserClickContinueBotton()
+        {
+            Thread.Sleep(3000);
+            abelShoppingLoginPage.IClickContinue2();
+        }
+        [Then(@"User click logout")]
+        public void ThenUserClickLogout()
+        {
+            abelShoppingLoginPage.IClickLogOut();
+        }
+
+
+
+        [Given(@"I enter phone number")]
+        public void GivenIEnterPhoneNumber()
+        {
+            abelShoppingLoginPage.IEnterPhoneNumber();
+        }
+        [When(@"I confirm Payment details is displayed")]
+        public void WhenIConfirmPaymentDetailsIsDisplayed()
+        {
+            Thread.Sleep(3000);
+            Assert.That(abelShoppingLoginPage.IsPaymentDetailsIsDisplayed);
+        }
 
 
 
@@ -167,6 +246,124 @@ namespace PodCheckout.StepDefinition
         {
             abelShoppingLoginPage.IClickContinue();
         }
+
+        [Given(@"I click search")]
+        public void GivenIClickSearch()
+        {
+            abelShoppingLoginPage.IClickSearchButton();
+        }
+
+        [Given(@"I Click Add item")]
+        public void GivenIClickAddItem()
+        {
+            abelShoppingLoginPage.IClickAddItem();
+        }
+
+        [Given(@"I confirm tropical fruit added to basket")]
+        public void GivenIConfirmTropicalFruitAddedToBasket()
+        {
+            Thread.Sleep(3000);
+            Assert.That(abelShoppingLoginPage.IConfirmTropicalFruitAddedSuccessfully);
+        }
+
+
+        [Given(@"I click Close")]
+        public void GivenIClickClose()
+        {
+            abelShoppingLoginPage.IClickClose();
+        }
+
+        [Given(@"User Click Search")]
+        public void GivenUserClickSearch()
+        {
+            abelShoppingLoginPage.UserClickSearchButton2();
+        }
+
+        [Given(@"click add Item(.*)")]
+        public void GivenClickAddItem(int p0)
+        {
+            abelShoppingLoginPage.ClickUserAddItem();
+        }
+
+        [Given(@"User click close(.*)")]
+        public void GivenUserClickClose(int p0)
+        {
+            abelShoppingLoginPage.ClickUserClose();
+        }
+
+        [Given(@"the user click search")]
+        public void GivenTheUserClickSearch()
+        {
+            abelShoppingLoginPage.UserClickSearchButton3();
+        }
+
+        [Given(@"The user click Add item")]
+        public void GivenTheUserClickAddItem()
+        {
+            abelShoppingLoginPage.IClickAddItem3();
+        }
+
+        [Given(@"The user click close")]
+        public void GivenTheUserClickClose()
+        {
+            abelShoppingLoginPage.ClickUserClose3();
+        }
+
+
+        [Given(@"I click search botton")]
+        public void GivenIClickSearchBotton()
+        {
+            abelShoppingLoginPage.IClickSearchBotton();
+        }
+
+        [Given(@"I Add Item botton")]
+        public void GivenIAddItemBotton()
+        {
+            Thread.Sleep(5000);
+            abelShoppingLoginPage.IClickAddItem4();
+        }
+
+        [Given(@"I click close botton")]
+        public void GivenIClickCloseBotton()
+        {
+            Thread.Sleep(3000);
+            abelShoppingLoginPage.IClickUserCloseBotton();
+        }
+
+        [Given(@"click Promo")]
+        public void GivenClickPromo()
+        {
+            abelShoppingLoginPage.IClickPromo();
+        }
+
+        [Given(@"I click christmas")]
+        public void GivenIClickChristmas()
+        {
+            abelShoppingLoginPage.IClickChristmas();
+        }
+
+
+
+        [Given(@"I click Close pop")]
+        public void GivenIClickClosePop()
+        {
+            abelShoppingLoginPage.IClickClosePop();
+        }
+
+
+
+
+
+        [Given(@"Is four item in the basket successfully")]
+        public void GivenIsFourItemInTheBasketSuccessfully()
+        {
+            Assert.That(abelShoppingLoginPage.IConfirmFourBasketAddedSuccessfully);
+
+        }
+
+
+
+
 
 
 
